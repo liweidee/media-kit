@@ -1,0 +1,891 @@
+.
+|-- CODE_OF_CONDUCT.md
+|-- LICENSE
+|-- README.md
+|-- libs
+|   |-- android
+|   |   |-- media_kit_libs_android_audio
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- android
+|   |   |   |   |-- build.gradle
+|   |   |   |   |-- settings.gradle
+|   |   |   |   `-- src
+|   |   |   |       `-- main
+|   |   |   |           |-- AndroidManifest.xml
+|   |   |   |           `-- java
+|   |   |   |               `-- com
+|   |   |   |                   `-- alexmercerind
+|   |   |   |                       |-- media_kit_libs_android_audio
+|   |   |   |                       `-- mediakitandroidhelper
+|   |   |   |-- example
+|   |   |   |   `-- README.md
+|   |   |   `-- pubspec.yaml
+|   |   `-- media_kit_libs_android_video
+|   |       |-- CHANGELOG.md
+|   |       |-- LICENSE
+|   |       |-- README.md
+|   |       |-- android
+|   |       |   |-- build.gradle
+|   |       |   |-- settings.gradle
+|   |       |   `-- src
+|   |       |       `-- main
+|   |       |           |-- AndroidManifest.xml
+|   |       |           `-- java
+|   |       |               `-- com
+|   |       |                   `-- alexmercerind
+|   |       |                       |-- media_kit_libs_android_video
+|   |       |                       `-- mediakitandroidhelper
+|   |       |-- example
+|   |       |   `-- README.md
+|   |       `-- pubspec.yaml
+|   |-- ios
+|   |   |-- media_kit_libs_ios_audio
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- example
+|   |   |   |   `-- README.md
+|   |   |   |-- ios
+|   |   |   |   |-- Classes
+|   |   |   |   |   `-- MediaKitLibsIosAudioPlugin.swift
+|   |   |   |   |-- Makefile
+|   |   |   |   |-- create_framework_symlinks.sh
+|   |   |   |   `-- media_kit_libs_ios_audio.podspec
+|   |   |   `-- pubspec.yaml
+|   |   `-- media_kit_libs_ios_video
+|   |       |-- CHANGELOG.md
+|   |       |-- LICENSE
+|   |       |-- README.md
+|   |       |-- example
+|   |       |   `-- README.md
+|   |       |-- ios
+|   |       |   |-- Classes
+|   |       |   |   `-- MediaKitLibsIosVideoPlugin.swift
+|   |       |   |-- Makefile
+|   |       |   |-- create_framework_symlinks.sh
+|   |       |   `-- media_kit_libs_ios_video.podspec
+|   |       `-- pubspec.yaml
+|   |-- linux
+|   |   `-- media_kit_libs_linux
+|   |       |-- CHANGELOG.md
+|   |       |-- LICENSE
+|   |       |-- README.md
+|   |       |-- analysis_options.yaml
+|   |       |-- example
+|   |       |   `-- README.md
+|   |       |-- linux
+|   |       |   |-- CMakeLists.txt
+|   |       |   |-- include
+|   |       |   |   `-- media_kit_libs_linux
+|   |       |   |       `-- media_kit_libs_linux_plugin.h
+|   |       |   `-- media_kit_libs_linux_plugin.cc
+|   |       `-- pubspec.yaml
+|   |-- macos
+|   |   |-- media_kit_libs_macos_audio
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- example
+|   |   |   |   `-- README.md
+|   |   |   |-- macos
+|   |   |   |   |-- Classes
+|   |   |   |   |   `-- MediaKitLibsMacosAudioPlugin.swift
+|   |   |   |   |-- Makefile
+|   |   |   |   |-- create_framework_symlinks.sh
+|   |   |   |   `-- media_kit_libs_macos_audio.podspec
+|   |   |   `-- pubspec.yaml
+|   |   `-- media_kit_libs_macos_video
+|   |       |-- CHANGELOG.md
+|   |       |-- LICENSE
+|   |       |-- README.md
+|   |       |-- example
+|   |       |   `-- README.md
+|   |       |-- macos
+|   |       |   |-- Classes
+|   |       |   |   `-- MediaKitLibsMacosVideoPlugin.swift
+|   |       |   |-- Makefile
+|   |       |   |-- create_framework_symlinks.sh
+|   |       |   `-- media_kit_libs_macos_video.podspec
+|   |       `-- pubspec.yaml
+|   |-- universal
+|   |   |-- media_kit_libs_audio
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- example
+|   |   |   |   `-- README.md
+|   |   |   |-- lib
+|   |   |   |   `-- media_kit_libs_audio.dart
+|   |   |   |-- pubspec.yaml
+|   |   |   `-- pubspec_overrides.yaml
+|   |   `-- media_kit_libs_video
+|   |       |-- CHANGELOG.md
+|   |       |-- LICENSE
+|   |       |-- README.md
+|   |       |-- example
+|   |       |   `-- README.md
+|   |       |-- lib
+|   |       |   `-- media_kit_libs_video.dart
+|   |       |-- pubspec.yaml
+|   |       `-- pubspec_overrides.yaml
+|   `-- windows
+|       |-- media_kit_libs_windows_audio
+|       |   |-- CHANGELOG.md
+|       |   |-- LICENSE
+|       |   |-- README.md
+|       |   |-- example
+|       |   |   `-- README.md
+|       |   |-- pubspec.yaml
+|       |   `-- windows
+|       |       |-- CMakeLists.txt
+|       |       |-- include
+|       |       |   `-- media_kit_libs_windows_audio
+|       |       |       `-- media_kit_libs_windows_audio_plugin_c_api.h
+|       |       `-- media_kit_libs_windows_audio_plugin_c_api.cpp
+|       `-- media_kit_libs_windows_video
+|           |-- CHANGELOG.md
+|           |-- LICENSE
+|           |-- README.md
+|           |-- example
+|           |   `-- README.md
+|           |-- pubspec.yaml
+|           `-- windows
+|               |-- CMakeLists.txt
+|               |-- include
+|               |   `-- media_kit_libs_windows_video
+|               |       `-- media_kit_libs_windows_video_plugin_c_api.h
+|               `-- media_kit_libs_windows_video_plugin_c_api.cpp
+|-- media-kit_tree.txt
+|-- media_kit
+|   |-- CHANGELOG.md
+|   |-- LICENSE
+|   |-- README.md
+|   |-- analysis_options.yaml
+|   |-- example
+|   |   `-- README.md
+|   |-- lib
+|   |   |-- ffi
+|   |   |   |-- README.txt
+|   |   |   |-- ffi.dart
+|   |   |   `-- src
+|   |   |       |-- allocation.dart
+|   |   |       |-- arena.dart
+|   |   |       |-- utf16.dart
+|   |   |       `-- utf8.dart
+|   |   |-- generated
+|   |   |   `-- libmpv
+|   |   |       `-- bindings.dart
+|   |   |-- media_kit.dart
+|   |   `-- src
+|   |       |-- media_kit.dart
+|   |       |-- models
+|   |       |   |-- audio_device.dart
+|   |       |   |-- audio_params.dart
+|   |       |   |-- media.dart
+|   |       |   |-- playable.dart
+|   |       |   |-- player_log.dart
+|   |       |   |-- player_state.dart
+|   |       |   |-- player_stream.dart
+|   |       |   |-- playlist.dart
+|   |       |   |-- playlist_mode.dart
+|   |       |   |-- subtitle.dart
+|   |       |   |-- track.dart
+|   |       |   `-- video_params.dart
+|   |       |-- player
+|   |       |   |-- native
+|   |       |   |   |-- core
+|   |       |   |   |   |-- initializer.dart
+|   |       |   |   |   |-- initializer_isolate.dart
+|   |       |   |   |   |-- initializer_native_event_loop.dart
+|   |       |   |   |   `-- native_library.dart
+|   |       |   |   |-- player
+|   |       |   |   |   |-- player.dart
+|   |       |   |   |   `-- real.dart
+|   |       |   |   `-- utils
+|   |       |   |       `-- android_helper.dart
+|   |       |   |-- platform_player.dart
+|   |       |   `-- player.dart
+|   |       `-- values.dart
+|   |-- pubspec.yaml
+|   |-- screenshots
+|   |   |-- android_0.jpg
+|   |   |-- android_1.jpg
+|   |   |-- ios_0.jpg
+|   |   |-- ios_1.jpg
+|   |   |-- linux.jpg
+|   |   |-- macos.jpg
+|   |   |-- web.jpg
+|   |   `-- windows.jpg
+|   `-- test
+|       |-- ci
+|       |   `-- macos
+|       |       `-- scripts
+|       |           |-- relink_dylibs.sh
+|       |           `-- setup_dylibs.sh
+|       |-- common
+|       |   |-- sources.dart
+|       |   `-- sources_native.dart
+|       `-- src
+|           |-- models
+|           |   `-- media
+|           |       `-- player_state_test.dart
+|           `-- player
+|               |-- native
+|               |   `-- core
+|               |       |-- initializer_test.dart
+|               |       `-- native_library_test.dart
+|               `-- player_test.dart
+|-- media_kit_native_event_loop
+|   |-- CHANGELOG.md
+|   |-- LICENSE
+|   |-- README.md
+|   |-- analysis_options.yaml
+|   |-- common
+|   |   `-- darwin
+|   |       |-- Headers
+|   |       |   `-- signal_recovery.h
+|   |       |-- Makefile
+|   |       |-- Podspec
+|   |       |   `-- media_kit_utils.rb
+|   |       `-- Sources
+|   |           `-- signal_recovery.c
+|   |-- example
+|   |   `-- README.md
+|   |-- ios
+|   |   |-- Classes
+|   |   |   |-- media_kit_native_event_loop.cc
+|   |   |   `-- signal_recovery.c
+|   |   `-- media_kit_native_event_loop.podspec
+|   |-- linux
+|   |   `-- CMakeLists.txt
+|   |-- macos
+|   |   |-- Classes
+|   |   |   |-- media_kit_native_event_loop.cc
+|   |   |   `-- signal_recovery.c
+|   |   `-- media_kit_native_event_loop.podspec
+|   |-- pubspec.yaml
+|   |-- src
+|   |   |-- CMakeLists.txt
+|   |   |-- dart_api_types.h
+|   |   |-- media_kit_native_event_loop.cc
+|   |   `-- media_kit_native_event_loop.h
+|   `-- windows
+|       `-- CMakeLists.txt
+|-- media_kit_test
+|   |-- LICENSE
+|   |-- analysis_options.yaml
+|   |-- android
+|   |   |-- app
+|   |   |   |-- build.gradle
+|   |   |   `-- src
+|   |   |       |-- debug
+|   |   |       |   `-- AndroidManifest.xml
+|   |   |       |-- main
+|   |   |       |   |-- AndroidManifest.xml
+|   |   |       |   |-- kotlin
+|   |   |       |   |   `-- com
+|   |   |       |   |       `-- alexmercerind
+|   |   |       |   |           `-- media_kit_test
+|   |   |       |   |               `-- MainActivity.kt
+|   |   |       |   `-- res
+|   |   |       |       |-- drawable
+|   |   |       |       |   `-- launch_background.xml
+|   |   |       |       |-- drawable-v21
+|   |   |       |       |   `-- launch_background.xml
+|   |   |       |       |-- mipmap-hdpi
+|   |   |       |       |   `-- ic_launcher.png
+|   |   |       |       |-- mipmap-mdpi
+|   |   |       |       |   `-- ic_launcher.png
+|   |   |       |       |-- mipmap-xhdpi
+|   |   |       |       |   `-- ic_launcher.png
+|   |   |       |       |-- mipmap-xxhdpi
+|   |   |       |       |   `-- ic_launcher.png
+|   |   |       |       |-- mipmap-xxxhdpi
+|   |   |       |       |   `-- ic_launcher.png
+|   |   |       |       |-- values
+|   |   |       |       |   `-- styles.xml
+|   |   |       |       `-- values-night
+|   |   |       |           `-- styles.xml
+|   |   |       `-- profile
+|   |   |           `-- AndroidManifest.xml
+|   |   |-- build.gradle
+|   |   |-- gradle
+|   |   |   `-- wrapper
+|   |   |       `-- gradle-wrapper.properties
+|   |   |-- gradle.properties
+|   |   `-- settings.gradle
+|   |-- ios
+|   |   |-- Flutter
+|   |   |   |-- AppFrameworkInfo.plist
+|   |   |   |-- Debug.xcconfig
+|   |   |   `-- Release.xcconfig
+|   |   |-- Podfile
+|   |   |-- Podfile.lock
+|   |   |-- Runner
+|   |   |   |-- AppDelegate.swift
+|   |   |   |-- Assets.xcassets
+|   |   |   |   |-- AppIcon.appiconset
+|   |   |   |   |   |-- Contents.json
+|   |   |   |   |   |-- Icon-App-1024x1024@1x.png
+|   |   |   |   |   |-- Icon-App-20x20@1x.png
+|   |   |   |   |   |-- Icon-App-20x20@2x.png
+|   |   |   |   |   |-- Icon-App-20x20@3x.png
+|   |   |   |   |   |-- Icon-App-29x29@1x.png
+|   |   |   |   |   |-- Icon-App-29x29@2x.png
+|   |   |   |   |   |-- Icon-App-29x29@3x.png
+|   |   |   |   |   |-- Icon-App-40x40@1x.png
+|   |   |   |   |   |-- Icon-App-40x40@2x.png
+|   |   |   |   |   |-- Icon-App-40x40@3x.png
+|   |   |   |   |   |-- Icon-App-60x60@2x.png
+|   |   |   |   |   |-- Icon-App-60x60@3x.png
+|   |   |   |   |   |-- Icon-App-76x76@1x.png
+|   |   |   |   |   |-- Icon-App-76x76@2x.png
+|   |   |   |   |   `-- Icon-App-83.5x83.5@2x.png
+|   |   |   |   `-- LaunchImage.imageset
+|   |   |   |       |-- Contents.json
+|   |   |   |       |-- LaunchImage.png
+|   |   |   |       |-- LaunchImage@2x.png
+|   |   |   |       |-- LaunchImage@3x.png
+|   |   |   |       `-- README.md
+|   |   |   |-- Base.lproj
+|   |   |   |   |-- LaunchScreen.storyboard
+|   |   |   |   `-- Main.storyboard
+|   |   |   |-- Info-Debug.plist
+|   |   |   |-- Info-Profile.plist
+|   |   |   |-- Info-Release.plist
+|   |   |   `-- Runner-Bridging-Header.h
+|   |   |-- Runner.xcodeproj
+|   |   |   |-- project.pbxproj
+|   |   |   |-- project.xcworkspace
+|   |   |   |   |-- contents.xcworkspacedata
+|   |   |   |   `-- xcshareddata
+|   |   |   |       |-- IDEWorkspaceChecks.plist
+|   |   |   |       `-- WorkspaceSettings.xcsettings
+|   |   |   `-- xcshareddata
+|   |   |       `-- xcschemes
+|   |   |           `-- Runner.xcscheme
+|   |   `-- Runner.xcworkspace
+|   |       |-- contents.xcworkspacedata
+|   |       `-- xcshareddata
+|   |           |-- IDEWorkspaceChecks.plist
+|   |           `-- WorkspaceSettings.xcsettings
+|   |-- lib
+|   |   `-- common
+|   |       |-- globals.dart
+|   |       |-- sources
+|   |       |   |-- sources.dart
+|   |       |   |-- sources_native.dart
+|   |       |   `-- sources_web.dart
+|   |       `-- widgets.dart
+|   |-- linux
+|   |   |-- CMakeLists.txt
+|   |   |-- flutter
+|   |   |   |-- CMakeLists.txt
+|   |   |   |-- generated_plugin_registrant.cc
+|   |   |   |-- generated_plugin_registrant.h
+|   |   |   `-- generated_plugins.cmake
+|   |   |-- main.cc
+|   |   |-- my_application.cc
+|   |   `-- my_application.h
+|   |-- macos
+|   |   |-- Flutter
+|   |   |   |-- Flutter-Debug.xcconfig
+|   |   |   |-- Flutter-Release.xcconfig
+|   |   |   `-- GeneratedPluginRegistrant.swift
+|   |   |-- Podfile
+|   |   |-- Podfile.lock
+|   |   |-- Runner
+|   |   |   |-- AppDelegate.swift
+|   |   |   |-- Assets.xcassets
+|   |   |   |   `-- AppIcon.appiconset
+|   |   |   |       |-- Contents.json
+|   |   |   |       |-- app_icon_1024.png
+|   |   |   |       |-- app_icon_128.png
+|   |   |   |       |-- app_icon_16.png
+|   |   |   |       |-- app_icon_256.png
+|   |   |   |       |-- app_icon_32.png
+|   |   |   |       |-- app_icon_512.png
+|   |   |   |       `-- app_icon_64.png
+|   |   |   |-- Base.lproj
+|   |   |   |   `-- MainMenu.xib
+|   |   |   |-- Configs
+|   |   |   |   |-- AppInfo.xcconfig
+|   |   |   |   |-- Debug.xcconfig
+|   |   |   |   |-- Release.xcconfig
+|   |   |   |   `-- Warnings.xcconfig
+|   |   |   |-- DebugProfile.entitlements
+|   |   |   |-- Info.plist
+|   |   |   |-- MainFlutterWindow.swift
+|   |   |   `-- Release.entitlements
+|   |   |-- Runner.xcodeproj
+|   |   |   |-- project.pbxproj
+|   |   |   |-- project.xcworkspace
+|   |   |   |   `-- xcshareddata
+|   |   |   |       `-- IDEWorkspaceChecks.plist
+|   |   |   `-- xcshareddata
+|   |   |       `-- xcschemes
+|   |   |           `-- Runner.xcscheme
+|   |   `-- Runner.xcworkspace
+|   |       |-- contents.xcworkspacedata
+|   |       `-- xcshareddata
+|   |           `-- IDEWorkspaceChecks.plist
+|   |-- pubspec.yaml
+|   |-- pubspec_overrides.yaml
+|   |-- web
+|   |   |-- favicon.png
+|   |   |-- icons
+|   |   |   |-- Icon-192.png
+|   |   |   |-- Icon-512.png
+|   |   |   |-- Icon-maskable-192.png
+|   |   |   `-- Icon-maskable-512.png
+|   |   |-- index.html
+|   |   `-- manifest.json
+|   `-- windows
+|       |-- CMakeLists.txt
+|       |-- flutter
+|       |   |-- CMakeLists.txt
+|       |   |-- generated_plugin_registrant.cc
+|       |   |-- generated_plugin_registrant.h
+|       |   `-- generated_plugins.cmake
+|       `-- runner
+|           |-- CMakeLists.txt
+|           |-- Runner.rc
+|           |-- flutter_window.cpp
+|           |-- flutter_window.h
+|           |-- main.cpp
+|           |-- resource.h
+|           |-- resources
+|           |   `-- app_icon.ico
+|           |-- runner.exe.manifest
+|           |-- utils.cpp
+|           |-- utils.h
+|           |-- win32_window.cpp
+|           `-- win32_window.h
+|-- media_kit_video
+|   |-- CHANGELOG.md
+|   |-- LICENSE
+|   |-- README.md
+|   |-- analysis_options.yaml
+|   |-- android
+|   |   |-- build.gradle
+|   |   |-- proguard-rules.pro
+|   |   |-- settings.gradle
+|   |   `-- src
+|   |       `-- main
+|   |           |-- AndroidManifest.xml
+|   |           `-- java
+|   |               `-- com
+|   |                   `-- alexmercerind
+|   |                       `-- media_kit_video
+|   |                           |-- MediaKitVideoPlugin.java
+|   |                           |-- Utils.java
+|   |                           |-- VideoOutput.java
+|   |                           `-- VideoOutputManager.java
+|   |-- common
+|   |   `-- darwin
+|   |       |-- Classes
+|   |       |   |-- plugin
+|   |       |   |   |-- MPVHelpers.swift
+|   |       |   |   |-- MPVVideoOutParams.swift
+|   |       |   |   |-- MediaKitVideoPlugin.swift
+|   |       |   |   |-- ResizableTextureProtocol.swift
+|   |       |   |   |-- SafeResizableTexture.swift
+|   |       |   |   |-- SwappableObjectManager.swift
+|   |       |   |   |-- TextureSW.swift
+|   |       |   |   |-- TextureSWContext.swift
+|   |       |   |   |-- UtilsProtocol.swift
+|   |       |   |   |-- VideoOutput.swift
+|   |       |   |   |-- VideoOutputConfiguration.swift
+|   |       |   |   |-- VideoOutputManager.swift
+|   |       |   |   `-- Worker.swift
+|   |       |   `-- stub
+|   |       |       `-- MediaKitVideoPlugin.swift
+|   |       |-- Makefile
+|   |       `-- Podspec
+|   |           `-- media_kit_utils.rb
+|   |-- example
+|   |   |-- README.md
+|   |   |-- analysis_options.yaml
+|   |   |-- android
+|   |   |   |-- app
+|   |   |   |   |-- build.gradle
+|   |   |   |   `-- src
+|   |   |   |       |-- debug
+|   |   |   |       |   `-- AndroidManifest.xml
+|   |   |   |       |-- main
+|   |   |   |       |   |-- AndroidManifest.xml
+|   |   |   |       |   |-- java
+|   |   |   |       |   |   `-- com
+|   |   |   |       |   |       `-- alexmercerind
+|   |   |   |       |   |           `-- media_kit_video_example
+|   |   |   |       |   `-- res
+|   |   |   |       |       |-- drawable
+|   |   |   |       |       |   `-- launch_background.xml
+|   |   |   |       |       |-- drawable-v21
+|   |   |   |       |       |   `-- launch_background.xml
+|   |   |   |       |       |-- mipmap-hdpi
+|   |   |   |       |       |   `-- ic_launcher.png
+|   |   |   |       |       |-- mipmap-mdpi
+|   |   |   |       |       |   `-- ic_launcher.png
+|   |   |   |       |       |-- mipmap-xhdpi
+|   |   |   |       |       |   `-- ic_launcher.png
+|   |   |   |       |       |-- mipmap-xxhdpi
+|   |   |   |       |       |   `-- ic_launcher.png
+|   |   |   |       |       |-- mipmap-xxxhdpi
+|   |   |   |       |       |   `-- ic_launcher.png
+|   |   |   |       |       |-- values
+|   |   |   |       |       |   `-- styles.xml
+|   |   |   |       |       `-- values-night
+|   |   |   |       |           `-- styles.xml
+|   |   |   |       `-- profile
+|   |   |   |           `-- AndroidManifest.xml
+|   |   |   |-- build.gradle
+|   |   |   |-- gradle
+|   |   |   |   `-- wrapper
+|   |   |   |       `-- gradle-wrapper.properties
+|   |   |   |-- gradle.properties
+|   |   |   `-- settings.gradle
+|   |   |-- pubspec.yaml
+|   |   `-- pubspec_overrides.yaml
+|   |-- ios
+|   |   |-- Classes
+|   |   |   |-- plugin
+|   |   |   |   |-- TextureHW.swift
+|   |   |   |   |-- common
+|   |   |   |   |   |-- MPVHelpers.swift
+|   |   |   |   |   |-- MPVVideoOutParams.swift
+|   |   |   |   |   |-- MediaKitVideoPlugin.swift
+|   |   |   |   |   |-- ResizableTextureProtocol.swift
+|   |   |   |   |   |-- SafeResizableTexture.swift
+|   |   |   |   |   |-- SwappableObjectManager.swift
+|   |   |   |   |   |-- TextureSW.swift
+|   |   |   |   |   |-- TextureSWContext.swift
+|   |   |   |   |   |-- UtilsProtocol.swift
+|   |   |   |   |   |-- VideoOutput.swift
+|   |   |   |   |   |-- VideoOutputConfiguration.swift
+|   |   |   |   |   |-- VideoOutputManager.swift
+|   |   |   |   |   `-- Worker.swift
+|   |   |   |   `-- gles
+|   |   |   |       |-- OpenGLESHelpers.swift
+|   |   |   |       `-- TextureGLESContext.swift
+|   |   |   `-- stub
+|   |   |       `-- common
+|   |   |           `-- MediaKitVideoPlugin.swift
+|   |   `-- media_kit_video.podspec
+|   |-- lib
+|   |   |-- media_kit_video.dart
+|   |   |-- media_kit_video_controls
+|   |   |   |-- media_kit_video_controls.dart
+|   |   |   `-- src
+|   |   |       `-- controls
+|   |   |           |-- adaptive.dart
+|   |   |           |-- cupertino.dart
+|   |   |           |-- extensions
+|   |   |           |   `-- duration.dart
+|   |   |           |-- material.dart
+|   |   |           |-- material_desktop.dart
+|   |   |           |-- methods
+|   |   |           |   |-- fullscreen.dart
+|   |   |           |   `-- video_state.dart
+|   |   |           |-- no.dart
+|   |   |           `-- widgets
+|   |   |               |-- fullscreen_inherited_widget.dart
+|   |   |               |-- video_controls_theme_data_injector.dart
+|   |   |               `-- video_state_inherited_widget.dart
+|   |   `-- src
+|   |       |-- subtitle
+|   |       |   `-- subtitle_view.dart
+|   |       |-- utils
+|   |       |   |-- dispose_safe_notifer.dart
+|   |       |   `-- wakelock.dart
+|   |       |-- video
+|   |       |   |-- simple_video_texture.dart
+|   |       |   |-- video.dart
+|   |       |   `-- video_texture.dart
+|   |       |-- video_controller
+|   |       |   |-- android_video_controller
+|   |       |   |   |-- android_video_controller.dart
+|   |       |   |   `-- real.dart
+|   |       |   |-- native_video_controller
+|   |       |   |   |-- native_video_controller.dart
+|   |       |   |   `-- real.dart
+|   |       |   |-- platform_video_controller.dart
+|   |       |   `-- video_controller.dart
+|   |       `-- video_view_parameters.dart
+|   |-- linux
+|   |   |-- CMakeLists.txt
+|   |   |-- include
+|   |   |   `-- media_kit_video
+|   |   |       |-- media_kit_video_plugin.h
+|   |   |       |-- texture_gl.h
+|   |   |       |-- texture_sw.h
+|   |   |       |-- utils.h
+|   |   |       |-- video_output.h
+|   |   |       `-- video_output_manager.h
+|   |   |-- media_kit_video_plugin.cc
+|   |   |-- texture_gl.cc
+|   |   |-- texture_sw.cc
+|   |   |-- utils.cc
+|   |   |-- video_output.cc
+|   |   `-- video_output_manager.cc
+|   |-- macos
+|   |   |-- Classes
+|   |   |   |-- plugin
+|   |   |   |   |-- TextureHW.swift
+|   |   |   |   |-- Utils.swift
+|   |   |   |   |-- common
+|   |   |   |   |   |-- MPVHelpers.swift
+|   |   |   |   |   |-- MPVVideoOutParams.swift
+|   |   |   |   |   |-- MediaKitVideoPlugin.swift
+|   |   |   |   |   |-- ResizableTextureProtocol.swift
+|   |   |   |   |   |-- SafeResizableTexture.swift
+|   |   |   |   |   |-- SwappableObjectManager.swift
+|   |   |   |   |   |-- TextureSW.swift
+|   |   |   |   |   |-- TextureSWContext.swift
+|   |   |   |   |   |-- UtilsProtocol.swift
+|   |   |   |   |   |-- VideoOutput.swift
+|   |   |   |   |   |-- VideoOutputConfiguration.swift
+|   |   |   |   |   |-- VideoOutputManager.swift
+|   |   |   |   |   `-- Worker.swift
+|   |   |   |   `-- gl
+|   |   |   |       |-- OpenGLHelpers.swift
+|   |   |   |       `-- TextureGLContext.swift
+|   |   |   `-- stub
+|   |   |       `-- common
+|   |   |           `-- MediaKitVideoPlugin.swift
+|   |   `-- media_kit_video.podspec
+|   |-- pubspec.yaml
+|   |-- pubspec_overrides.yaml
+|   `-- windows
+|       |-- CMakeLists.txt
+|       |-- angle_surface_manager.cc
+|       |-- angle_surface_manager.h
+|       |-- include
+|       |   `-- media_kit_video
+|       |       `-- media_kit_video_plugin_c_api.h
+|       |-- media_kit_video_plugin.cc
+|       |-- media_kit_video_plugin.h
+|       |-- media_kit_video_plugin_c_api.cc
+|       |-- thread_pool.h
+|       |-- utils.cc
+|       |-- utils.h
+|       |-- video_output.cc
+|       |-- video_output.h
+|       |-- video_output_manager.cc
+|       `-- video_output_manager.h
+|-- melos.yaml
+|-- pubspec.yaml
+`-- video_player_media_kit
+    |-- CHANGELOG.md
+    |-- LICENSE
+    |-- README.md
+    |-- analysis_options.yaml
+    |-- example
+    |   |-- LICENSE
+    |   |-- README.md
+    |   |-- analysis_options.yaml
+    |   |-- android
+    |   |   |-- app
+    |   |   |   |-- build.gradle
+    |   |   |   |-- gradle
+    |   |   |   |   `-- wrapper
+    |   |   |   |       `-- gradle-wrapper.properties
+    |   |   |   `-- src
+    |   |   |       |-- androidTest
+    |   |   |       |   `-- java
+    |   |   |       |       `-- io
+    |   |   |       |           `-- flutter
+    |   |   |       |               `-- plugins
+    |   |   |       |-- main
+    |   |   |       |   |-- AndroidManifest.xml
+    |   |   |       |   |-- java
+    |   |   |       |   |   `-- io
+    |   |   |       |   |       `-- flutter
+    |   |   |       |   |           `-- plugins
+    |   |   |       |   `-- res
+    |   |   |       |       |-- drawable
+    |   |   |       |       |   `-- launch_background.xml
+    |   |   |       |       |-- mipmap-hdpi
+    |   |   |       |       |   `-- ic_launcher.png
+    |   |   |       |       |-- mipmap-mdpi
+    |   |   |       |       |   `-- ic_launcher.png
+    |   |   |       |       |-- mipmap-xhdpi
+    |   |   |       |       |   `-- ic_launcher.png
+    |   |   |       |       |-- mipmap-xxhdpi
+    |   |   |       |       |   `-- ic_launcher.png
+    |   |   |       |       |-- mipmap-xxxhdpi
+    |   |   |       |       |   `-- ic_launcher.png
+    |   |   |       |       |-- values
+    |   |   |       |       |   `-- styles.xml
+    |   |   |       |       `-- xml
+    |   |   |       |           `-- network_security_config.xml
+    |   |   |       `-- test
+    |   |   |           `-- java
+    |   |   |               `-- io
+    |   |   |                   `-- flutter
+    |   |   |                       `-- plugins
+    |   |   |-- build.gradle
+    |   |   |-- gradle
+    |   |   |   `-- wrapper
+    |   |   |       `-- gradle-wrapper.properties
+    |   |   |-- gradle.properties
+    |   |   `-- settings.gradle
+    |   |-- assets
+    |   |   |-- Audio.mp3
+    |   |   |-- Butterfly-209.mp4
+    |   |   |-- Butterfly-209.webm
+    |   |   |-- bumble_bee_captions.srt
+    |   |   |-- bumble_bee_captions.vtt
+    |   |   `-- flutter-mark-square-64.png
+    |   |-- integration_test
+    |   |   |-- controller_swap_test.dart
+    |   |   `-- video_player_test.dart
+    |   |-- ios
+    |   |   |-- Flutter
+    |   |   |   |-- AppFrameworkInfo.plist
+    |   |   |   |-- Debug.xcconfig
+    |   |   |   `-- Release.xcconfig
+    |   |   |-- PodFile
+    |   |   |-- Podfile.lock
+    |   |   |-- Runner
+    |   |   |   |-- AppDelegate.swift
+    |   |   |   |-- Assets.xcassets
+    |   |   |   |   |-- AppIcon.appiconset
+    |   |   |   |   |   |-- Contents.json
+    |   |   |   |   |   |-- Icon-App-1024x1024@1x.png
+    |   |   |   |   |   |-- Icon-App-20x20@1x.png
+    |   |   |   |   |   |-- Icon-App-20x20@2x.png
+    |   |   |   |   |   |-- Icon-App-20x20@3x.png
+    |   |   |   |   |   |-- Icon-App-29x29@1x.png
+    |   |   |   |   |   |-- Icon-App-29x29@2x.png
+    |   |   |   |   |   |-- Icon-App-29x29@3x.png
+    |   |   |   |   |   |-- Icon-App-40x40@1x.png
+    |   |   |   |   |   |-- Icon-App-40x40@2x.png
+    |   |   |   |   |   |-- Icon-App-40x40@3x.png
+    |   |   |   |   |   |-- Icon-App-60x60@2x.png
+    |   |   |   |   |   |-- Icon-App-60x60@3x.png
+    |   |   |   |   |   |-- Icon-App-76x76@1x.png
+    |   |   |   |   |   |-- Icon-App-76x76@2x.png
+    |   |   |   |   |   `-- Icon-App-83.5x83.5@2x.png
+    |   |   |   |   `-- LaunchImage.imageset
+    |   |   |   |       |-- Contents.json
+    |   |   |   |       |-- LaunchImage.png
+    |   |   |   |       |-- LaunchImage@2x.png
+    |   |   |   |       |-- LaunchImage@3x.png
+    |   |   |   |       `-- README.md
+    |   |   |   |-- Base.lproj
+    |   |   |   |   |-- LaunchScreen.storyboard
+    |   |   |   |   `-- Main.storyboard
+    |   |   |   |-- Info.plist
+    |   |   |   `-- Runner-Bridging-Header.h
+    |   |   |-- Runner.xcodeproj
+    |   |   |   |-- project.pbxproj
+    |   |   |   |-- project.xcworkspace
+    |   |   |   |   |-- contents.xcworkspacedata
+    |   |   |   |   `-- xcshareddata
+    |   |   |   |       |-- IDEWorkspaceChecks.plist
+    |   |   |   |       `-- WorkspaceSettings.xcsettings
+    |   |   |   `-- xcshareddata
+    |   |   |       `-- xcschemes
+    |   |   |           `-- Runner.xcscheme
+    |   |   |-- Runner.xcworkspace
+    |   |   |   |-- contents.xcworkspacedata
+    |   |   |   `-- xcshareddata
+    |   |   |       |-- IDEWorkspaceChecks.plist
+    |   |   |       `-- WorkspaceSettings.xcsettings
+    |   |   `-- RunnerTests
+    |   |       `-- RunnerTests.swift
+    |   |-- lib
+    |   |   `-- main.dart
+    |   |-- linux
+    |   |   |-- CMakeLists.txt
+    |   |   |-- flutter
+    |   |   |   |-- CMakeLists.txt
+    |   |   |   |-- generated_plugin_registrant.cc
+    |   |   |   |-- generated_plugin_registrant.h
+    |   |   |   `-- generated_plugins.cmake
+    |   |   |-- main.cc
+    |   |   |-- my_application.cc
+    |   |   `-- my_application.h
+    |   |-- macos
+    |   |   |-- Flutter
+    |   |   |   |-- Flutter-Debug.xcconfig
+    |   |   |   |-- Flutter-Release.xcconfig
+    |   |   |   `-- GeneratedPluginRegistrant.swift
+    |   |   |-- Podfile
+    |   |   |-- Podfile.lock
+    |   |   |-- Runner
+    |   |   |   |-- AppDelegate.swift
+    |   |   |   |-- Assets.xcassets
+    |   |   |   |   `-- AppIcon.appiconset
+    |   |   |   |       |-- Contents.json
+    |   |   |   |       |-- app_icon_1024.png
+    |   |   |   |       |-- app_icon_128.png
+    |   |   |   |       |-- app_icon_16.png
+    |   |   |   |       |-- app_icon_256.png
+    |   |   |   |       |-- app_icon_32.png
+    |   |   |   |       |-- app_icon_512.png
+    |   |   |   |       `-- app_icon_64.png
+    |   |   |   |-- Base.lproj
+    |   |   |   |   `-- MainMenu.xib
+    |   |   |   |-- Configs
+    |   |   |   |   |-- AppInfo.xcconfig
+    |   |   |   |   |-- Debug.xcconfig
+    |   |   |   |   |-- Release.xcconfig
+    |   |   |   |   `-- Warnings.xcconfig
+    |   |   |   |-- DebugProfile.entitlements
+    |   |   |   |-- Info.plist
+    |   |   |   |-- MainFlutterWindow.swift
+    |   |   |   `-- Release.entitlements
+    |   |   |-- Runner.xcodeproj
+    |   |   |   |-- project.pbxproj
+    |   |   |   |-- project.xcworkspace
+    |   |   |   |   `-- xcshareddata
+    |   |   |   |       `-- IDEWorkspaceChecks.plist
+    |   |   |   `-- xcshareddata
+    |   |   |       `-- xcschemes
+    |   |   |           `-- Runner.xcscheme
+    |   |   |-- Runner.xcworkspace
+    |   |   |   |-- contents.xcworkspacedata
+    |   |   |   `-- xcshareddata
+    |   |   |       `-- IDEWorkspaceChecks.plist
+    |   |   `-- RunnerTests
+    |   |       `-- RunnerTests.swift
+    |   |-- pubspec.lock
+    |   |-- pubspec.yaml
+    |   |-- pubspec_overrides.yaml
+    |   |-- test_driver
+    |   |   `-- integration_test.dart
+    |   |-- web
+    |   |   `-- index.html
+    |   `-- windows
+    |       |-- CMakeLists.txt
+    |       |-- flutter
+    |       |   |-- CMakeLists.txt
+    |       |   |-- generated_plugin_registrant.cc
+    |       |   |-- generated_plugin_registrant.h
+    |       |   `-- generated_plugins.cmake
+    |       `-- runner
+    |           |-- CMakeLists.txt
+    |           |-- Runner.rc
+    |           |-- flutter_window.cpp
+    |           |-- flutter_window.h
+    |           |-- main.cpp
+    |           |-- resource.h
+    |           |-- resources
+    |           |   `-- app_icon.ico
+    |           |-- runner.exe.manifest
+    |           |-- utils.cpp
+    |           |-- utils.h
+    |           |-- win32_window.cpp
+    |           `-- win32_window.h
+    |-- lib
+    |   |-- src
+    |   |   `-- media_kit_video_player.dart
+    |   `-- video_player_media_kit.dart
+    |-- pubspec.yaml
+    `-- pubspec_overrides.yaml
+
+313 directories, 575 files

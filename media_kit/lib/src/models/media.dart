@@ -39,8 +39,10 @@ class Media extends Playable {
   /// Default: `null`.
   final Duration? end;
 
+  final Map<String, String>? httpHeaders;
+
   /// {@macro media}
-  const Media(this.uri, {this.extras, this.start, this.end});
+  const Media(this.uri, {this.extras, this.start, this.end, this.httpHeaders});
 
   /// For comparing with other [Media] instances.
   @override
@@ -61,15 +63,17 @@ class Media extends Playable {
     Map<String, String>? extras,
     Duration? start,
     Duration? end,
+    Map<String, String>? httpHeaders,
   }) {
     return Media(
       uri ?? this.uri,
       extras: extras ?? this.extras,
       start: start ?? this.start,
       end: end ?? this.end,
+      httpHeaders: httpHeaders ?? this.httpHeaders,
     );
   }
 
   @override
-  String toString() => 'Media($uri, extras: $extras, start: $start, end: $end)';
+  String toString() => 'Media($uri, extras: $extras, httpHeaders: $httpHeaders, start: $start, end: $end)';
 }

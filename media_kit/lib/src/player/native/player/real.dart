@@ -1545,6 +1545,35 @@ class NativePlayer extends PlatformPlayer {
             //   print(exception);
             //   print(stacktrace);
             // }
+
+            // ===== [新增] 官方 1.2.6 HTTP headers 注入（恢复）=====
+            try {
+              final name = 'path'.toNativeUtf8();
+              final uriPtr = mpv.mpv_get_property_string(ctx, name.cast());
+              if (uriPtr != nullptr) {
+                final uriStr = uriPtr.cast<Utf8>().toDartString();
+                mpv.mpv_free(uriPtr.cast());
+                calloc.free(name);
+                Media? matched;
+                for (final m in current) {
+                  if (m.uri == uriStr) {
+                    matched = m;
+                    break;
+                  }
+                }
+                final headers = matched?.httpHeaders;
+                if (headers != null && headers.isNotEmpty) {
+                  setHeader(mpv, ctx, headers: headers);
+                }
+              } else {
+                calloc.free(name);
+              }
+            } catch (exception, stacktrace) {
+              print(exception);
+              print(stacktrace);
+            }
+            // ===== [新增结束] =====
+
             // Handle start & end position specified in the [Media].
             // --------------------------------------------------
             mpv.mpv_hook_continue(ctx, prop.ref.id);
@@ -1578,6 +1607,26 @@ class NativePlayer extends PlatformPlayer {
             // }
             // Set start & end position as [generated.mpv_format.MPV_FORMAT_NONE] [generated.mpv_node].
             // --------------------------------------------------
+            
+            // ===== [新增] 官方 1.2.6 清空 HTTP headers =====
+            try {
+              final property = 'http-header-fields'.toNativeUtf8();
+              final value = calloc<generated.mpv_node>();
+              value.ref.format = generated.mpv_format.MPV_FORMAT_NONE;
+              mpv.mpv_set_property(
+                ctx,
+                property,
+                generated.mpv_format.MPV_FORMAT_NODE,
+                value.cast(),
+              );
+              calloc.free(property);
+              calloc.free(value);
+            } catch (exception, stacktrace) {
+              print(exception);
+              print(stacktrace);
+            }
+            // ===== [新增结束] =====
+
             mpv.mpv_hook_continue(ctx, prop.ref.id);
         }
     }

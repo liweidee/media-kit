@@ -20,6 +20,14 @@ Widget CupertinoVideoControls(VideoState state) {
   );
 }
 
+/// [MaterialDesktopVideoControlsThemeData] available in this [context].
+CupertinoVideoControlsThemeData _theme(BuildContext context) =>
+    FullscreenInheritedWidget.maybeOf(context) == null
+        ? CupertinoVideoControlsTheme.maybeOf(context)?.normal ??
+            kDefaultCupertinoVideoControlsThemeData
+        : CupertinoVideoControlsTheme.maybeOf(context)?.fullscreen ??
+            kDefaultCupertinoVideoControlsThemeDataFullscreen;
+
 /// Default [CupertinoVideoControlsThemeData].
 const kDefaultCupertinoVideoControlsThemeData =
     CupertinoVideoControlsThemeData();
@@ -74,7 +82,7 @@ class CupertinoVideoControlsTheme extends InheritedWidget {
 
 /// {@macro cupertino_video_controls}
 class _CupertinoVideoControls extends StatefulWidget {
-  const _CupertinoVideoControls({Key? key}) : super(key: key);
+  const _CupertinoVideoControls();
 
   @override
   State<_CupertinoVideoControls> createState() =>
