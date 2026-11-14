@@ -1551,7 +1551,7 @@ class NativePlayer extends PlatformPlayer {
               final name = 'path'.toNativeUtf8();
               final uriPtr = mpv.mpv_get_property_string(ctx, name.cast());
               if (uriPtr != nullptr) {
-                final uriStr = uriPtr.cast<Utf8>().toDartString();
+                final uriStr = uriPtr.cast<Uint8>().toDartString();
                 mpv.mpv_free(uriPtr.cast());
                 calloc.free(name);
                 Media? matched;
